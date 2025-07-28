@@ -527,6 +527,22 @@
             .quantity-control {
                 justify-content: center;
             }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-card {
+                padding: 25px;
+            }
+
+            .educational-intro h3 {
+                font-size: 1.3em;
+            }
+
+            .educational-section h4 {
+                font-size: 1.2em;
+            }
         }
 
         /* Loading Animation - Minimal */
@@ -834,6 +850,109 @@
             font-size: 0.9em;
             font-weight: 500;
         }
+
+        /* Educational Page Styles */
+        .educational-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .educational-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .educational-intro h3 {
+            color: var(--text-primary);
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .educational-intro p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .educational-section {
+            margin-bottom: 50px;
+        }
+
+        .educational-section h4 {
+            color: var(--nvent-red);
+            font-size: 1.3em;
+            font-weight: 500;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 35px;
+        }
+
+        .benefit-card h5 {
+            color: var(--text-primary);
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            color: var(--text-secondary);
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .benefit-list li::before {
+            content: '•';
+            color: var(--nvent-red);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .highlight-box {
+            background: var(--nvent-gray);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--nvent-red);
+            font-size: 1.4em;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -1126,15 +1245,89 @@
             <!-- Navigation -->
             <div class="button-group">
                 <button class="btn btn-secondary" id="backToStep3">← Back</button>
+                <button class="btn btn-primary" id="learnMoreBtn">
+                    Learn More →
+                </button>
             </div>
         </div>
 
-        <!-- Loading Screen -->
-        <div class="loading" id="loadingScreen">
-            <div class="spinner"></div>
-            <h3 style="color: var(--nvent-red);">Generating Your Surge Protection Report...</h3>
-            <p style="color: var(--nvent-deep-red);">Please wait while we compile your results.</p>
+        <!-- Screen 5: Educational Content -->
+        <div class="screen" id="screen5">
+            <h2>Why 65 kA SCCR Protection Matters</h2>
+            
+            <div class="educational-content">
+                <div class="educational-intro">
+                    <h3>Understanding the Industry's Highest Safety Rating</h3>
+                    <p>For microgrids and mission-critical applications where failure is not an option, specifying the right components is paramount.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Industry-Leading 65 kA SCCR Rating</h4>
+                    <p>The Short-Circuit Current Rating (SCCR) defines the maximum fault current a device can withstand without catastrophic failure. Our 65 kA rating sets a new benchmark in surge protection.</p>
+                </div>
+
+                <div class="educational-section">
+                    <h4>What Makes 65 kA SCCR Revolutionary?</h4>
+                    <div class="benefit-grid">
+                        <div class="benefit-card">
+                            <h5>Best-in-Class Protection</h5>
+                            <ul class="benefit-list">
+                                <li>Industry-leading safety rating for electrical protection</li>
+                                <li>Handles maximum fault current without failure</li>
+                                <li>Robust protection for nearly any application</li>
+                                <li>Prevents device from becoming a point of failure</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <h5>Compact DIN Rail Design</h5>
+                            <ul class="benefit-list">
+                                <li>Space-saving compared to traditional panel mounts</li>
+                                <li>Easy installation and maintenance</li>
+                                <li>Perfect for high-density electrical environments</li>
+                                <li>Fits modern control cabinets seamlessly</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="educational-section">
+                    <h4>Perfect for Critical Applications</h4>
+                    <div class="benefit-grid">
+                        <div class="benefit-card">
+                            <h5>Microgrid Applications</h5>
+                            <ul class="benefit-list">
+                                <li>Handles multiple power sources (solar, generators, batteries)</li>
+                                <li>Protects against high fault currents from combined sources</li>
+                                <li>Seamless integration into distributed control systems</li>
+                                <li>Essential for modern renewable energy systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <h5>Mission-Critical Facilities</h5>
+                            <ul class="benefit-list">
+                                <li>Essential for data centers, hospitals, manufacturing</li>
+                                <li>Prevents costly downtime and equipment damage</li>
+                                <li>Protects against arc flash hazards</li>
+                                <li>Ensures continuous operation when failure isn't an option</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>The Bottom Line</h4>
+                    <p>65 kA SCCR in a space-saving DIN rail mount represents the highest level of surge protection available. It provides the certified safety and resilience required to protect the complex electrical systems that power today's critical infrastructure.</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="button-group">
+                <button class="btn btn-secondary" id="backToStep4">← Back to Results</button>
+            </div>
         </div>
+
     </div>
 
     <script>
@@ -1199,7 +1392,7 @@
         }
 
         function updateProgressBar() {
-            const progress = (appState.currentScreen / 4) * 100;
+            const progress = (appState.currentScreen / 5) * 100;
             progressBar.style.width = progress + '%';
         }
 
@@ -1463,50 +1656,15 @@
             showScreen(3);
         });
 
-        document.getElementById('generateBtn').addEventListener('click', () => {
-            // Show loading screen
-            screens.forEach(screen => screen.classList.remove('active'));
-            document.getElementById('loadingScreen').classList.add('active');
-            
-            // Calculate key metrics for report
-            const potentialLoss = calculatePotentialLoss(appState.inverterCost, appState.downtimeCost);
-            const protectedValue = calculateProtectedValue(potentialLoss);
-            const dailyRevenue = calculateEstimatedDailyRevenue(appState.systemSize);
-            const failedProducts = competitorProducts.filter(p => p.rating < appState.faultCurrent).length;
-            const ericoSafetyMargin = calculateSafetyMargin(65, appState.faultCurrent);
-            
-            // Simulate report generation
-            setTimeout(() => {
-                alert(`Surge Protection Analysis Report Generated!
-
-SYSTEM CONFIGURATION:
-• System Size: ${appState.systemSize} MW
-• Inverter Type: ${appState.inverterType === 'string' ? 'String Inverters' : 'Central Inverters'}
-• Inverter Count: ${appState.inverterQuantity} units
-• Fault Current Scenario: ${appState.faultCurrent} kA
-
-PROTECTION ANALYSIS:
-• Products Tested: ${competitorProducts.length}
-• Products Failed: ${failedProducts}
-• ERICO PVT21500R Safety Margin: +${ericoSafetyMargin.toFixed(1)}%
-
-FINANCIAL IMPACT:
-• Estimated Daily Revenue: ${formatCurrency(dailyRevenue)}
-• Potential Loss from ONE Event: ${formatCurrency(potentialLoss)}
-• Value of Protected Uptime: ${formatCurrency(protectedValue)}
-
-RECOMMENDATION:
-By selecting ERICO PVT21500R protection, your facility can potentially save ${formatCurrency(protectedValue)} by avoiding downtime costs and equipment replacement.
-
-Only ERICO PVT21500R provides adequate protection at ${appState.faultCurrent} kA fault current levels.
-
-Contact our sales team for a detailed proposal and custom protection analysis.`);
-                
-                // Hide loading screen and return to first screen
-                document.getElementById('loadingScreen').classList.remove('active');
-                showScreen(1);
-            }, 3000);
+        document.getElementById('learnMoreBtn').addEventListener('click', () => {
+            showScreen(5);
         });
+
+        // Screen 5 Navigation
+        document.getElementById('backToStep4').addEventListener('click', () => {
+            showScreen(4);
+        });
+
 
         // Logo fallback handling
         const nventLogo = document.getElementById('nventLogo');
