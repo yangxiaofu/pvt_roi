@@ -588,6 +588,32 @@
             display: none !important;
         }
 
+        /* Hide progress bar when Screen 5 is active */
+        body:has(#screen5.active) .progress-container {
+            display: none;
+        }
+
+        /* Product Showcase Styles */
+        .product-showcase {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+        }
+
+        .product-image {
+            width: 20%;
+            height: auto;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .product-showcase .product-name {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--nvent-red);
+            margin-top: 15px;
+        }
+
         /* Competitor Comparison - Minimalistic */
         .comparison-grid {
             display: grid;
@@ -1253,6 +1279,12 @@
 
         <!-- Screen 5: Educational Content -->
         <div class="screen" id="screen5">
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <img src="./asset/PH39039.png.webp" alt="ERICO PVT Surge Protection Device" class="product-image">
+                <div class="product-name">PVT Surge</div>
+            </div>
+            
             <h2>Why 65 kA SCCR Protection Matters</h2>
             
             <div class="educational-content">
