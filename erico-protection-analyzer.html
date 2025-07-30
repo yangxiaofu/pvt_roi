@@ -1357,6 +1357,7 @@
             <!-- Navigation -->
             <div class="button-group">
                 <button class="btn btn-secondary" id="backToStep4">← Back to Results</button>
+                <button class="btn btn-primary" id="startOverBtn">Start from the Beginning</button>
             </div>
         </div>
 
@@ -1696,6 +1697,52 @@
         document.getElementById('backToStep4').addEventListener('click', () => {
             showScreen(4);
         });
+
+        document.getElementById('startOverBtn').addEventListener('click', () => {
+            resetApplication();
+        });
+
+        // Reset Application Function
+        function resetApplication() {
+            // Reset application state
+            appState.currentScreen = 1;
+            appState.systemSize = null;
+            appState.inverterType = null;
+            appState.inverterQuantity = 0;
+            appState.manualQuantity = false;
+            appState.faultCurrent = null;
+            appState.scenario = null;
+            appState.inverterCost = 50000;
+            appState.downtimeCost = 100000;
+
+            // Clear all form selections
+            document.querySelectorAll('.radio-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+
+            // Reset UI elements
+            inverterControls.style.display = 'none';
+            inverterQuantityDisplay.textContent = '0';
+            feedbackDisplay.style.display = 'none';
+            analyzeBtn.disabled = true;
+
+            // Reset sliders to default values
+            inverterCostSlider.value = 50000;
+            downtimeCostSlider.value = 100000;
+            inverterCostDisplay.textContent = formatCurrency(50000);
+            downtimeCostDisplay.textContent = formatCurrency(100000);
+
+            // Hide scenario feedback
+            document.getElementById('scenarioFeedback').style.display = 'none';
+            document.getElementById('comparisonFeedback').style.display = 'none';
+            document.getElementById('compareBtn').disabled = true;
+
+            // Return to first screen
+            showScreen(1);
+        }
 
 
         // Logo fallback handling
